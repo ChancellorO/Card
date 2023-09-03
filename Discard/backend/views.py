@@ -1,8 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .serializers import UserSerializer, CardSerializer
+from .models import User, Card
+
+class UserView(viewsets.ModelViewSet):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+
+class CardView(viewsets.ModelViewSet):
+    serializer_class = CardSerializer
+    queryset = Card.objects.all()
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
-# Create your views here.
