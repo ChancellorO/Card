@@ -7,9 +7,9 @@ function Test() {
     function handleSubmit(e) {
         e.preventDefault(); // Prevents browser from reloading.
 
-        axios.post("/backend/addUser")
+        axios.post("http://127.0.0.1:8000/backend/addUser")
         .then((res) => {
-            console.log("noah stinks");            
+            console.log("chancellor stinks");            
         })
         .catch((error) => {
             console.log(error);

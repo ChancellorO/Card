@@ -11,4 +11,8 @@ class CardView(viewsets.ModelViewSet):
     serializer_class = CardSerializer
     queryset = Card.objects.all()
 
+def addUser(request):
+    print(request)
+    return(render("String"))
+
 
