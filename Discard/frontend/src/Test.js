@@ -6,7 +6,14 @@ function Test() {
 
     function handleSubmit(e) {
         e.preventDefault(); // Prevents browser from reloading.
-        console.log("noah stinks");
+
+        axios.post("/backend/addUser")
+        .then((res) => {
+            console.log("noah stinks");            
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
 
     return (
