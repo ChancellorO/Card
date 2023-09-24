@@ -10,7 +10,8 @@ import Form from 'react-bootstrap/Form';
 function Test() {
     const [Profile, setProfile] = useState({
         username: '',
-        password: ''
+        password: '',
+        email: ''
     })
 
     const handleChange = (event)  => {
@@ -23,7 +24,7 @@ function Test() {
     function handleSubmit(e) {
         e.preventDefault(); // Prevents browser from reloading.
 
-        axios.post("http://localhost:8000/backend/api/users/", Profile)
+        axios.post("http://localhost:8000/backend/register", Profile)
         .then((res) => {
             alert("Successfully Signed Up!")
         })
@@ -46,6 +47,11 @@ function Test() {
                         <Form.Group className="mb-3" controlId="formUsername">
                             <Form.Label>Username</Form.Label>
                             <Form.Control type="username" name="username" value={Profile.username} onChange={handleChange} placeholder="Enter Username" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="Email" name="email" value={Profile.email} onChange={handleChange} placeholder="Enter Email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formPassword">

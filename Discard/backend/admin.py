@@ -1,7 +1,8 @@
 # from django.contrib import admin
-# from .models import User, Card
+# from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+# from .models import AppUser
 
+# class UserAdmin(BaseUserAdmin):
+#     fieldsets = BaseUserAdmin.fieldsets
 
-# # Register your models here.
-# admin.site.register(User)
-# admin.site.register(Card)
+# admin.site.register(AppUser, UserAdmin)
